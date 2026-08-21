@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import Picture01 from "../assets/pictures/picture_01.webp";
+---
+
+<section
+   class="w-full flex flex-row h-[calc(100dvh-2.5rem)] bg-linear-to-b from-main to-main-dark px-32 items-center"
+>
+   <div class="flex flex-col items-center justify-center">
+      <p class="font-roboto text-7xl font-bold uppercase text-white italic">
+         Potente desengrasante D'Grade
+      </p>
+
+      <ul
+         class="mt-20 flex flex-col gap-5 [&>li]:text-6xl [&>li]:uppercase [&>li]:text-custom-black w-full [&>li]:font-bold [&>li]:italic"
+      >
+         <li>- Natural</li>
+         <li>- Biodegradable</li>
+         <li>- Fácil de usar</li>
+      </ul>
+
+      <button
+         class="py-3 px-8 text-2xl rounded-4xl bg-custom-black text-white mr-auto mt-16 hover:bg-contrast/40 transition-all cursor-pointer"
+         >Contactar</button
+      >
+   </div>
+   <img src={Picture01.src} alt="Bottle" class="aspect-square h-7/10" />
+</section>

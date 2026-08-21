@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import Header from "../components/header.astro";
+import Landing from "../components/landing.astro";
+import FloatingContact from "../components/floating-contact.astro";
 ---
 
 <html lang="en">
@@ -12,7 +14,9 @@ import Header from "../components/header.astro";
       <meta name="generator" content={Astro.generator} />
       <title>DGrade Demo</title>
    </head>
-   <body class="p-0 m-0 flex flex-col sticky top-0">
+   <body class="p-0 m-0 flex flex-col relative">
       <Header />
+      <Landing />
+      <FloatingContact />
    </body>
 </html>

@@ -7,4 +7,6 @@ export default defineConfig({
    vite: {
       plugins: [tailwindcss()],
    },
+   site: 'https://m2panda.github.io',
+   base: 'dgrade-demo'
 });
