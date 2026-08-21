@@ -8,5 +8,5 @@ export default defineConfig({
       plugins: [tailwindcss()],
    },
    site: 'https://m2panda.github.io',
-   base: 'dgrade-demo'
+   base: '/dgrade-demo'
 });
