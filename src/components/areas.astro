@@ -1,8 +1,37 @@
 ---
 import "../styles/global.css";
+import Picture02 from "../assets/pictures/picture_02.jpg";
 ---
 
 <section
-   class="w-full flex flex-row h-[calc(100dvh-2.5rem)] bg-linear-to-b from-main to-main-dark px-32 items-center"
+   class="w-full flex flex-col h-[calc(100dvh-2.5rem)] bg-custom-black px-32 items-center py-9 gap-10"
 >
+   <p class="text-white w-full text-3xl italic uppercase">
+      Uso industrial y en amplia gama de áreas de trabajo
+   </p>
+   <div
+      class="w-full flex flex-row gap-20 h-fit justify-between overflow-hidden"
+   >
+      <ul
+         class="w-5min-w-56 min-w-56 flex flex-col items-start justify-start gap-0 [&>li]:w-full [&>li]:px-4 [&>li]:py-8 [&>li]:text-white [&>li]:cursor-pointer [&>li]:border-b-2 [&>li]:border-contrast [&>li]:text-lg"
+      >
+         <li class="bg-contrast/30">Talleres y áreas de trabajo</li>
+         <li>Áreas de cocina</li>
+         <li>Tanques de combustible</li>
+         <li>Area de cocina</li>
+      </ul>
+      <div class="flex-auto flex flex-col overflow-hidden relative">
+         <img
+            src={Picture02.src}
+            alt=""
+            class="h-full object-cover rounded-2xl"
+         />
+         <p
+            class="text-white text-2xl font-bold absolute bg-linear-to-b from-transparent to-black/80 bottom-0 left-0 pt-40 pb-4 px-12 rounded-2xl"
+         >
+            Limpieza de grasas y aceites adheridos a las máquinas y herramientas
+            de trabajo, elimina la suciedad por contacto de los operadores
+         </p>
+      </div>
+   </div>
 </section>
