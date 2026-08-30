@@ -1,16 +1,16 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 ---
 
-<div class="fixed z-50 bottom-10 right-10">
+<div class="fixed right-10 bottom-10 z-50">
    <button
-      class="w-16 aspect-square rounded-full bg-custom-black cursor-pointer flex items-center justify-center"
+      class="bg-custom-black flex aspect-square w-16 cursor-pointer items-center justify-center rounded-full"
    >
       <svg
          xmlns="http://www.w3.org/2000/svg"
          fill="currentColor"
          viewBox="0 0 24 24"
-         class="text-contrast animate-pulse w-7 aspect-square"
+         class="text-contrast aspect-square w-7 animate-pulse"
       >
          <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
          <path
@@ -18,10 +18,13 @@ import "../styles/global.css";
          ></path>
       </svg>
    </button>
-   
-   <div class="absolute bottom-[calc(100%+1rem)] right-0 rounded-3xl bg-white text-custom-black p-6 flex shadow">
+
+   <div
+      class="text-custom-black absolute right-0 bottom-[calc(100%+1rem)] flex rounded-3xl bg-white p-6 shadow"
+   >
       <ul
-         class="w-fit gap-3 flex flex-col items-end justify-start [&_svg]:text-main [&_svg]:aspect-square [&_a]:hover:text-main [&_a]:transition-all [&_a]:underline [&>li]:flex [&>li]:flex-row [&>li]:items-center [&>li]:w-fit [&>li]:gap-2 [&_svg]:w-6">
+         class="[&_svg]:text-main [&_a]:hover:text-main flex w-fit flex-col items-end justify-start gap-3 [&_a]:underline [&_a]:transition-all [&_svg]:aspect-square [&_svg]:w-6 [&>li]:flex [&>li]:w-fit [&>li]:flex-row [&>li]:items-center [&>li]:gap-2"
+      >
          <li>
             <a href="mailto:example@dgrade.mx">example@dgrade.mx</a>
             <svg

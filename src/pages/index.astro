@@ -1,23 +1,36 @@
 ---
-import Areas from "../components/areas.astro";
-import Examples from "../components/examples.astro";
-import FloatingContact from "../components/floating-contact.astro";
-import Footer from "../components/footer.astro";
-import Header from "../components/header.astro";
-import Landing from "../components/landing.astro";
-import "../styles/global.css";
+import Areas from '../components/areas.astro';
+import Examples from '../components/examples.astro';
+import FloatingContact from '../components/floating-contact.astro';
+import Footer from '../components/footer.astro';
+import Header from '../components/header.astro';
+import Landing from '../components/landing.astro';
+import '../styles/global.css';
 ---
 
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="icon" href="/favicon.ico" />
-      <meta name="viewport" content="width=device-width" />
-      <meta name="generator" content={Astro.generator} />
+      <link
+         rel="icon"
+         type="image/svg+xml"
+         href="/favicon.svg"
+      />
+      <link
+         rel="icon"
+         href="/favicon.ico"
+      />
+      <meta
+         name="viewport"
+         content="width=device-width"
+      />
+      <meta
+         name="generator"
+         content={Astro.generator}
+      />
       <title>DGrade Demo</title>
    </head>
-   <body class="p-0 m-0 flex flex-col relative">
+   <body class="relative m-0 flex flex-col p-0">
       <Header />
       <Landing />
       <FloatingContact />

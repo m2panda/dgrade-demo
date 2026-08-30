@@ -1,18 +1,18 @@
 ---
-import "../styles/global.css";
-import Picture01 from "../assets/pictures/picture_01.webp";
+import '../styles/global.css';
+import Picture01 from '../assets/pictures/picture_01.webp';
 ---
 
 <section
-   class="w-full flex flex-row h-[calc(100dvh-2.5rem)] bg-linear-to-b from-main to-main-dark px-32 items-center"
+   class="from-main to-main-dark flex h-[calc(100dvh-2.5rem)] w-full flex-row items-center bg-linear-to-b px-32"
 >
    <div class="flex flex-col items-center justify-center">
-      <p class="font-roboto text-7xl font-bold uppercase text-white italic">
+      <p class="font-roboto text-7xl font-bold text-white uppercase italic">
          Potente desengrasante D'Grade
       </p>
 
       <ul
-         class="mt-20 flex flex-col gap-5 [&>li]:text-6xl [&>li]:uppercase [&>li]:text-custom-black w-full [&>li]:font-bold [&>li]:italic"
+         class="[&>li]:text-custom-black mt-20 flex w-full flex-col gap-5 [&>li]:text-6xl [&>li]:font-bold [&>li]:uppercase [&>li]:italic"
       >
          <li>- Natural</li>
          <li>- Biodegradable</li>
@@ -20,9 +20,13 @@ import Picture01 from "../assets/pictures/picture_01.webp";
       </ul>
 
       <button
-         class="py-3 px-8 text-2xl rounded-4xl bg-custom-black text-white mr-auto mt-16 hover:bg-contrast/40 transition-all cursor-pointer"
+         class="bg-custom-black hover:bg-contrast/40 mt-16 mr-auto cursor-pointer rounded-4xl px-8 py-3 text-2xl text-white transition-all"
          >Contactar</button
       >
    </div>
-   <img src={Picture01.src} alt="Bottle" class="aspect-square h-7/10" />
+   <img
+      src={Picture01.src}
+      alt="Bottle"
+      class="aspect-square h-7/10"
+   />
 </section>
