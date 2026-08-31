@@ -1,17 +1,66 @@
 ---
 import Logo from '@icons/logo.svg';
+import MenuIcon from '@icons/menu.svg';
+import XIcon from '@icons/x.svg';
 
 const headerLinks: { name: string; href: string }[] = [
    { name: 'Ejemplos', href: '#examples' },
    { name: 'Áreas', href: '#areas' },
    { name: 'Nosotros', href: '#about' },
-   { name: 'Contactanos', href: '#contact' },
+   { name: 'Contáctanos', href: '#contact' },
 ];
 ---
 
 <header
-   class="sticky top-0 z-50 flex h-14 w-full items-center justify-between bg-white px-32 shadow"
+   class="sticky top-0 z-50 grid h-14 w-full grid-cols-3 content-center items-center bg-white px-4 shadow sm:flex sm:grid-cols-none sm:justify-between sm:px-12 sm:content-none md:px-32"
 >
+   <div
+      id="mobile-sidebar-background"
+      class="mobile-background-invisible mobile-background-offscreen fixed top-0 z-50 h-full w-full bg-black/50 transition-opacity duration-200 sm:hidden"
+   >
+   </div>
+
+   <aside
+      id="mobile-sidebar-wrapper"
+      class="mobile-sidebar-closed ease fixed top-0 z-60 flex h-full w-10/12 bg-white px-8 py-16 transition-all duration-200 sm:hidden"
+   >
+      <button
+         class="toggle-sidebar absolute top-8 right-8 flex size-fit items-center justify-center"
+      >
+         <img
+            src={XIcon.src}
+            alt="Close"
+            class="svg-to-main size-8"
+         />
+      </button>
+
+      <ul
+         class="[&_a]:text-main flex flex-col items-start justify-start gap-6 [&_a]:cursor-pointer [&_a]:text-xl [&_a]:font-bold [&_a]:transition-all [&_a]:hover:underline"
+      >
+         {
+            headerLinks.map((link: { name: string; href: string }) => (
+               <li>
+                  <a
+                     class="sidebar-link"
+                     href={link.href}
+                  >
+                     {link.name}
+                  </a>
+               </li>
+            ))
+         }
+      </ul>
+   </aside>
+
+   <button
+      class="toggle-sidebar flex size-fit items-center justify-center sm:hidden"
+   >
+      <img
+         src={MenuIcon.src}
+         alt="Menu"
+         class="svg-to-main size-8"
+      />
+   </button>
    <a
       href="/"
       class="flex items-center justify-center"
@@ -23,9 +72,9 @@ const headerLinks: { name: string; href: string }[] = [
       />
    </a>
 
-   <aside class="m-0 flex h-full items-center justify-center p-0">
+   <div class="m-0 hidden h-full items-center justify-center p-0 sm:flex">
       <ul
-         class="[&_a]:text-main flex flex-row items-center justify-center gap-10 [&_a]:cursor-pointer [&_a]:font-bold [&_a]:transition-all [&_a]:hover:underline"
+         class="[&_a]:text-main flex flex-row items-center justify-center gap-6 md:gap-10 [&_a]:cursor-pointer [&_a]:font-bold [&_a]:transition-all [&_a]:hover:underline"
       >
          {
             headerLinks.map((link: { name: string; href: string }) => (
@@ -35,5 +84,59 @@ const headerLinks: { name: string; href: string }[] = [
             ))
          }
       </ul>
-   </aside>
+   </div>
 </header>
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+      const mobileSidebarBackground = document.getElementById(
+         'mobile-sidebar-background',
+      );
+      const mobileSidebarWrapper = document.getElementById(
+         'mobile-sidebar-wrapper',
+      );
+      const toggleSidebarButtons = [
+         ...document.querySelectorAll('.toggle-sidebar'),
+      ];
+      const sidebarLinks = [...document.querySelectorAll('.sidebar-link')];
+
+      let timer = 0;
+
+      if (
+         !mobileSidebarBackground ||
+         !mobileSidebarWrapper ||
+         sidebarLinks.length === 0 ||
+         toggleSidebarButtons.length === 0
+      )
+         return;
+
+      const toggleSidebar = () => {
+         mobileSidebarWrapper.classList.toggle('mobile-sidebar-open');
+         mobileSidebarWrapper.classList.toggle('mobile-sidebar-closed');
+
+         mobileSidebarBackground.classList.toggle('mobile-background-visible');
+         mobileSidebarBackground.classList.toggle(
+            'mobile-background-invisible',
+         );
+
+         mobileSidebarBackground.classList.contains(
+            'mobile-background-onscreen',
+         ) && (timer = 200);
+
+         setTimeout(() => {
+            mobileSidebarBackground.classList.toggle(
+               'mobile-background-offscreen',
+            );
+            mobileSidebarBackground.classList.toggle(
+               'mobile-background-onscreen',
+            );
+
+            timer = 0;
+         }, timer);
+      };
+
+      [...toggleSidebarButtons, ...sidebarLinks].forEach((element) =>
+         element.addEventListener('click', () => toggleSidebar()),
+      );
+   });
+</script>

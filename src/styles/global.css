@@ -8,3 +8,34 @@
    --color-custom-black: #2b061e;
    --color-contrast: #e4b7e5;
 }
+
+div#mobile-sidebar-background {
+   &.mobile-background-invisible {
+      @apply opacity-0;
+   }
+
+   &.mobile-background-visible {
+      @apply opacity-100;
+   }
+
+   &.mobile-background-offscreen {
+      @apply -left-full;
+   }
+   &.mobile-background-onscreen {
+      @apply left-0;
+   }
+}
+
+aside {
+   &.mobile-sidebar-open {
+      @apply left-0 opacity-100;
+   }
+   &.mobile-sidebar-closed {
+      @apply -left-full opacity-0;
+   }
+}
+
+.svg-to-main {
+   filter: brightness(0) saturate(100%) invert(50%) sepia(71%) saturate(5340%)
+      hue-rotate(357deg) brightness(99%) contrast(94%);
+}
