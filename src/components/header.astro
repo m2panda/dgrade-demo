@@ -34,14 +34,12 @@ const headerLinks: { name: string; href: string }[] = [
          />
       </button>
 
-      <ul
-         class="[&_a]:text-main flex flex-col items-start justify-start gap-6 [&_a]:cursor-pointer [&_a]:text-xl [&_a]:font-bold [&_a]:transition-all [&_a]:hover:underline"
-      >
+      <ul class="flex flex-col items-start justify-start gap-6">
          {
             headerLinks.map((link: { name: string; href: string }) => (
                <li>
                   <a
-                     class="sidebar-link"
+                     class="sidebar-link text-main cursor-pointer text-lg font-bold underline transition-all duration-200 md:text-xl"
                      href={link.href}
                   >
                      {link.name}

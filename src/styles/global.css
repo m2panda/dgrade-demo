@@ -35,7 +35,20 @@ aside {
    }
 }
 
+ul#floating-contact {
+   &.floating-contact-open {
+      @apply visible scale-100 opacity-100;
+   }
+   &.floating-contact-closed {
+      @apply invisible scale-75 opacity-0;
+   }
+}
+
 .svg-to-main {
    filter: brightness(0) saturate(100%) invert(50%) sepia(71%) saturate(5340%)
       hue-rotate(357deg) brightness(99%) contrast(94%);
+}
+.svg-to-contrast {
+   filter: brightness(0) saturate(100%) invert(98%) sepia(67%) saturate(6153%)
+      hue-rotate(191deg) brightness(89%) contrast(102%);
 }
