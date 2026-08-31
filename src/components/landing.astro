@@ -1,31 +1,58 @@
 ---
-import Picture01 from '@pictures/0e77d887-e742-4d6c-8e46-771f0b3ba723.webp';
+import BottlePicture from '@pictures/0e77d887-e742-4d6c-8e46-771f0b3ba723.webp';
+
+const characteristics: string[] = [
+   'Natural',
+   'Biodegradable',
+   'Inocuo',
+   'Fácil de usar',
+];
 ---
 
 <section
-   class="from-main to-main-dark flex h-[calc(100dvh-2.5rem)] w-full flex-row items-center bg-linear-to-b px-32"
+   class="from-main to-main-dark flex h-[calc(100dvh-4px*14)] w-full flex-col items-center justify-between gap-2 bg-linear-to-b px-4 py-8 sm:flex-row-reverse sm:gap-0 sm:px-12 md:px-24"
 >
-   <div class="flex flex-col items-center justify-center">
-      <p class="font-roboto text-7xl font-bold text-white uppercase italic">
+   <h1
+      class="font-roboto w-fit flex-col text-center text-3xl font-bold text-white uppercase italic sm:hidden"
+   >
+      Potente desengrasante D'Grade
+   </h1>
+
+   <img
+      src={BottlePicture.src}
+      alt="Bottle"
+      class="ease aspect-square h-5/12 w-auto max-w-3xl transition-all duration-200 sm:h-auto sm:w-8/12 xl:w-10/12"
+   />
+
+   <div class="flex w-full flex-col items-center justify-center gap-6 sm:gap-0">
+      <h1
+         class="font-roboto hidden w-full text-2xl font-bold text-white uppercase italic sm:block md:text-3xl lg:text-5xl"
+      >
          Potente desengrasante D'Grade
-      </p>
+      </h1>
+      <span
+         class="mt-2 hidden w-full text-lg text-white/80 italic sm:block md:text-xl xl:text-2xl"
+      >
+         ¡La <b>ciencia</b> al servicio del <b>medio ambiente</b>!
+      </span>
 
       <ul
-         class="[&>li]:text-custom-black mt-20 flex w-full flex-col gap-5 [&>li]:text-6xl [&>li]:font-bold [&>li]:uppercase [&>li]:italic"
+         class="mt-0 flex w-full flex-col sm:mt-8 sm:gap-1 md:mt-12 md:gap-2 lg:mt-20"
       >
-         <li>- Natural</li>
-         <li>- Biodegradable</li>
-         <li>- Fácil de usar</li>
+         {
+            characteristics.map((char: string) => (
+               <li class="text-custom-black text-xl font-bold uppercase italic transition-all sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+                  - {char}
+               </li>
+            ))
+         }
       </ul>
 
-      <button
-         class="bg-custom-black hover:bg-contrast/40 mt-16 mr-auto cursor-pointer rounded-4xl px-8 py-3 text-2xl text-white transition-all"
-         >Contactar</button
+      <a
+         href="#contact"
+         class="bg-custom-black hover:bg-contrast/40 ease mt-0 mr-auto cursor-pointer rounded-4xl px-8 py-4 text-xl text-white transition-all duration-200 sm:mt-4 sm:px-6 sm:py-3 sm:text-lg md:px-8 md:py-4"
       >
+         Contactar
+      </a>
    </div>
-   <img
-      src={Picture01.src}
-      alt="Bottle"
-      class="aspect-square h-7/10"
-   />
 </section>
