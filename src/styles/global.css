@@ -1,8 +1,6 @@
 @import 'tailwindcss';
-@import './fonts.css';
 
 @theme {
-   --font-roboto: 'Roboto', sans-serif;
    --color-main: #f5560f;
    --color-main-dark: #ba3202;
    --color-custom-black: #2b061e;
@@ -10,7 +8,7 @@
 }
 
 * {
-   @apply font-roboto;
+   font-family: var(--custom-font-roboto), sans-serif;
 }
 
 div#mobile-sidebar-background {
