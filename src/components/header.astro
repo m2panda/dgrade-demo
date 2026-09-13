@@ -22,7 +22,7 @@ const headerLinks: { name: string; href: string }[] = [
 
    <aside
       id="mobile-sidebar-wrapper"
-      class="mobile-sidebar-closed ease fixed top-0 z-60 flex h-full w-10/12 bg-white px-8 py-16 transition-all duration-200 sm:hidden"
+      class="mobile-sidebar-closed fixed top-0 z-60 flex h-full w-10/12 bg-white px-8 py-16 transition-all duration-200 ease-linear sm:hidden"
    >
       <button
          class="toggle-sidebar absolute top-8 right-8 flex size-fit items-center justify-center"
@@ -87,18 +87,19 @@ const headerLinks: { name: string; href: string }[] = [
 
 <script>
    document.addEventListener('DOMContentLoaded', () => {
-      const mobileSidebarBackground = document.getElementById(
-         'mobile-sidebar-background',
-      );
-      const mobileSidebarWrapper = document.getElementById(
+      const mobileSidebarBackground: HTMLElement | null =
+         document.getElementById('mobile-sidebar-background');
+      const mobileSidebarWrapper: HTMLElement | null = document.getElementById(
          'mobile-sidebar-wrapper',
       );
-      const toggleSidebarButtons = [
+      const toggleSidebarButtons: Element[] = [
          ...document.querySelectorAll('.toggle-sidebar'),
       ];
-      const sidebarLinks = [...document.querySelectorAll('.sidebar-link')];
+      const sidebarLinks: Element[] = [
+         ...document.querySelectorAll('.sidebar-link'),
+      ];
 
-      let timer = 0;
+      let timer: number = 0;
 
       if (
          !mobileSidebarBackground ||
@@ -108,7 +109,7 @@ const headerLinks: { name: string; href: string }[] = [
       )
          return;
 
-      const toggleSidebar = () => {
+      const toggleSidebar: () => void = () => {
          mobileSidebarWrapper.classList.toggle('mobile-sidebar-open');
          mobileSidebarWrapper.classList.toggle('mobile-sidebar-closed');
 
@@ -133,7 +134,7 @@ const headerLinks: { name: string; href: string }[] = [
          }, timer);
       };
 
-      [...toggleSidebarButtons, ...sidebarLinks].forEach((element) =>
+      [...toggleSidebarButtons, ...sidebarLinks].forEach((element: Element) =>
          element.addEventListener('click', () => toggleSidebar()),
       );
    });

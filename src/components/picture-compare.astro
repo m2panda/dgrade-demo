@@ -1,0 +1,21 @@
+---
+const { imgBefore, imgAfter } = Astro.props;
+---
+
+{
+   imgBefore && imgAfter && (
+      <div class="compare-wrapper relative aspect-video w-full cursor-col-resize touch-none overflow-hidden rounded-lg shadow-2xl select-none lg:w-1/2">
+         <img
+            src={imgBefore}
+            alt="picture before"
+            class="pointer-events-none absolute top-0 left-0 z-1 size-full object-cover"
+         />
+         <img
+            src={imgAfter}
+            alt="picture after"
+            class="picture-after pointer-events-none absolute top-0 left-0 z-2 size-full object-cover"
+         />
+         <div class="compare-handle after:text-custom-black absolute top-0 z-3 h-full w-1 bg-white shadow-2xl after:absolute after:top-1/2 after:left-1/2 after:flex after:size-10 after:-translate-x-1/2 after:-translate-y-1/2 after:items-center after:justify-center after:rounded-full after:bg-white after:text-lg after:font-bold after:shadow-2xl after:content-['◂_▸']" />
+      </div>
+   )
+}

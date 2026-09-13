@@ -3,8 +3,8 @@
 @theme {
    --color-main: #f5560f;
    --color-main-dark: #ba3202;
-   --color-custom-black: #2b061e;
-   --color-contrast: #e4b7e5;
+   --color-custom-black: #021827;
+   --color-contrast: #4dcaff;
 }
 
 * {
@@ -51,6 +51,6 @@ ul#floating-contact {
       hue-rotate(357deg) brightness(99%) contrast(94%);
 }
 .svg-to-contrast {
-   filter: brightness(0) saturate(100%) invert(98%) sepia(67%) saturate(6153%)
-      hue-rotate(191deg) brightness(89%) contrast(102%);
+   filter: brightness(0) saturate(100%) invert(69%) sepia(49%) saturate(1256%)
+      hue-rotate(168deg) brightness(100%) contrast(102%);
 }
