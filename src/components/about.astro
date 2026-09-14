@@ -1,0 +1,122 @@
+---
+import Profile from '@pictures/2ab449c6-3b6c-4244-ba38-aea4df67947e.webp';
+import Worker from '@pictures/348d6807-ecfc-4574-bd50-d184c05c9aad.webp';
+import Certificate from '@pictures/ec5f9cd1-1377-42c4-b440-2cd466d08fbe.webp';
+
+import AtomIcon from '@icons/atom.svg';
+import CommunityIcon from '@icons/community.svg';
+import LeafIcon from '@icons/leaf.svg';
+import RocketIcon from '@icons/rocket.svg';
+
+const properties: {
+   text: string;
+   icon: string;
+}[] = [
+   { text: 'Sostenibilidad', icon: LeafIcon.src },
+   { text: 'Innovación', icon: AtomIcon.src },
+   { text: 'Aceleración', icon: RocketIcon.src },
+   { text: 'Mentoría', icon: CommunityIcon.src },
+];
+---
+
+<section
+   id="about"
+   class="bg-main flex w-full flex-col items-center gap-10 px-4 py-8 sm:px-12 sm:py-12 md:px-24"
+>
+   <h2
+      class="w-full border-b-4 border-white pb-4 text-center text-xl font-bold text-white italic transition-all duration-200 ease-linear sm:text-2xl xl:text-3xl"
+   >
+      Nosotros
+   </h2>
+
+   <div class="flex w-full flex-col gap-10">
+      <div
+         class="flex w-full flex-row items-center justify-between gap-3 rounded-[100px] bg-white p-2"
+      >
+         <img
+            src={Profile.src}
+            alt="profile"
+            class="size-20 min-w-20 rounded-full object-cover"
+         />
+         <span
+            class="text-custom-black text-lg font-bold uppercase italic transition-all duration-200 ease-linear md:text-xl xl:text-2xl"
+            >¡La ciencia al servicio del medio ambiente!</span
+         >
+         <div class="size-0 md:size-20 md:min-w-20"></div>
+      </div>
+
+      <div
+         class="flex flex-col gap-10 rounded-2xl bg-white p-3 md:flex-row md:gap-2"
+      >
+         <p class="text-custom-black text-base xl:text-lg">
+            <b class="text-main text-lg uppercase md:text-xl">Grupo Sauber</b>
+            <br />
+            <br />
+            Fabricamos productos totalmente biodegradables. Nuestros desengrasantes
+            y eliminadores de sarro, debido a sus bases naturales, no contienen materiales
+            cáusticos, son antioxidantes y por lo tanto no son corrosivos.
+            <br />
+            <br />
+            D’Grade es un producto elaborado a base de extractos naturales y aditivos
+            especiales para en conjunto diseñar un poderoso agente surfactante que
+            ataca directamente las moléculas de las grasas y aceites adheridas a los
+            cuerpos contaminados tales como agua, tierra, maquinaria, enseres domésticos
+            y seres humanos, dejando el producto lavado completamente limpio.
+         </p>
+
+         <img
+            src={Worker.src}
+            alt=""
+            class="aspect-18/9 w-full rounded-xl object-cover md:w-1/3 md:min-w-1/3 lg:max-w-2xl"
+         />
+      </div>
+
+      <div
+         class="mx-auto flex w-full items-center justify-center rounded-xl bg-white p-2 sm:w-fit"
+      >
+         <img
+            src={Certificate.src}
+            alt="certificate"
+            class="h-auto flex-auto sm:w-lg sm:flex-none"
+         />
+      </div>
+
+      <div
+         class="bg-custom-black flex w-full flex-col items-center justify-start gap-6 rounded-xl p-4 transition-all duration-200 ease-linear sm:flex-row sm:p-6 xl:gap-12"
+      >
+         <div class="flex w-full flex-col gap-4 sm:w-2/3 lg:w-1/2">
+            <h3 class="text-contrast text-2xl font-bold">La base de D'Grade</h3>
+            <p
+               class="text-base text-white transition-all duration-299 ease-linear lg:text-lg"
+            >
+               Somos una de las 30 startups más innovadoras que contribuyen a la
+               mitigación de los gases de efecto invernadero (GEI) en México y
+               que participamos en el Mexico ClimAccelerator Chih. Este programa
+               es una colaboración entre New Ventures,Climate KIC, BID LAB el
+               Gobierno de Chihuahua (Secretaría de Innovación y Desarrollo
+               Económico del Estado y el Gobierno Municipal de Chihuahua ),
+               Startup Chihuahua y New Ventures
+            </p>
+         </div>
+
+         <ul
+            class="grid w-full grid-cols-2 content-start items-start gap-3 sm:w-1/3 sm:grid-cols-1 lg:w-1/2 xl:grid-cols-2"
+         >
+            {
+               properties.map((property: { text: string; icon: string }) => (
+                  <li class="flex flex-row items-center justify-start gap-3">
+                     <img
+                        src={property.icon}
+                        alt={property.text}
+                        class="svg-to-contrast size-8 transition-all duration-200 ease-linear lg:size-16"
+                     />
+                     <span class="text-sm text-white uppercase transition-all duration-200 ease-linear lg:text-lg">
+                        {property.text}
+                     </span>
+                  </li>
+               ))
+            }
+         </ul>
+      </div>
+   </div>
+</section>
