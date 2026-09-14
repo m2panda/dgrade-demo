@@ -1,0 +1,92 @@
+---
+
+---
+
+<section
+   id="contact"
+   class="flex w-full flex-col items-center gap-10 bg-white px-4 py-8 sm:px-12 sm:py-12 md:px-24"
+>
+   <h2
+      class="border-main-dark text-custom-black w-full border-b-4 pb-4 text-center text-xl font-bold italic transition-all duration-200 ease-linear sm:text-2xl xl:text-3xl"
+   >
+      Contacto
+   </h2>
+
+   <div class="flex w-full flex-col gap-10">
+      <p class="sm:text-lg">
+         Ponte en contacto con nosotros para poder realizar tu pedido y obtener
+         más información sobre <b>D'Grade</b>
+      </p>
+
+      <form class="flex flex-col gap-3">
+         <div class="flex w-full flex-col gap-3 md:flex-row">
+            <div class="flex w-full flex-col md:w-1/2">
+               <label class="text-main text-base font-bold md:text-lg"
+                  >Nombre</label
+               >
+               <input
+                  type="text"
+                  class="border-main focus:border-main-dark w-full rounded-lg border-2 p-3 transition-all duration-200 ease-linear focus:outline-none"
+               />
+            </div>
+            <div class="flex w-full flex-col md:w-1/2">
+               <label class="text-main text-base font-bold md:text-lg"
+                  >Contacto</label
+               >
+               <input
+                  type="text"
+                  class="border-main focus:border-main-dark w-full rounded-lg border-2 p-3 transition-all duration-200 ease-linear focus:outline-none"
+               />
+            </div>
+         </div>
+         <div class="flex w-full flex-col">
+            <label class="text-main text-base font-bold md:text-lg"
+               >Mensaje</label
+            >
+            <textarea
+               class="border-main focus:border-main-dark h-72 w-full resize-none rounded-lg border-2 p-3 transition-all duration-200 ease-linear focus:outline-none"
+            ></textarea>
+         </div>
+         <button
+            id="send-message"
+            class="bg-custom-black ml-auto rounded-lg px-10 py-3 text-lg font-bold text-white md:text-xl"
+         >
+            Enviar
+         </button>
+      </form>
+   </div>
+</section>
+
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('form') as HTMLFormElement | null;
+      const sendMessage = document.querySelector(
+         'button#send-message',
+      ) as HTMLButtonElement | null;
+
+      if (!form || !sendMessage) return;
+
+      form.addEventListener('submit', (event: Event) => event.preventDefault());
+
+      sendMessage.addEventListener('click', () => {
+         const inputs: HTMLInputElement[] = [
+            ...document.querySelectorAll('input'),
+         ];
+         const textareas: HTMLTextAreaElement[] = [
+            ...document.querySelectorAll('textarea'),
+         ];
+
+         for (const input of inputs) {
+            input.value = '';
+         }
+
+         for (const area of textareas) {
+            area.value = '';
+         }
+
+         window.alert(
+            'Mensaje enviado correctamente, espera a que nuestro equipo se ponga en contacto',
+         );
+      });
+   });
+</script>
