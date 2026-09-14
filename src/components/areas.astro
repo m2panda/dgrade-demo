@@ -1,37 +1,66 @@
 ---
-import Picture02 from '@pictures/cdcb4386-598d-4e36-9040-8f2766955804.webp';
-import '@styles/global.css';
+import CarIcon from '@icons/car.svg';
+import ChefHatIcon from '@icons/chef-hat.svg';
+import FactoryIcon from '@icons/factory.svg';
+import Cook from '@pictures/983d6e1d-1faf-4627-833e-28051743568b.webp';
+import Workshop from '@pictures/cdcb4386-598d-4e36-9040-8f2766955804.webp';
+import Industry from '@pictures/fa9129c2-5dea-4e88-9b1f-9eddc27b3195.webp';
+
+const areas: {
+   title: string;
+   picture: string;
+   icon: string;
+}[] = [
+   {
+      title: 'Talleres y áreas de trabajo',
+      picture: Workshop.src,
+      icon: CarIcon.src,
+   },
+   {
+      title: 'Limpieza de cocinas',
+      picture: Cook.src,
+      icon: ChefHatIcon.src,
+   },
+   {
+      title: 'Tanques de combustibles',
+      picture: Industry.src,
+      icon: FactoryIcon.src,
+   },
+];
 ---
 
 <section
-   class="bg-custom-black flex h-[calc(100dvh-2.5rem)] w-full flex-col items-center gap-10 px-32 py-9"
+   id="areas"
+   class="flex w-full flex-col items-center overflow-hidden bg-white"
 >
-   <p class="w-full text-3xl text-white uppercase italic">
-      Uso industrial y en amplia gama de áreas de trabajo
-   </p>
-   <div
-      class="flex h-fit w-full flex-row justify-between gap-20 overflow-hidden"
+   <h2
+      class="text-custom-black border-main-dark my-8 w-[calc(100%-2rem)] border-b-4 pb-4 text-center text-3xl font-bold italic sm:my-12 sm:w-[calc(100%-6rem)] md:w-[calc(100%-12rem)]"
    >
-      <ul
-         class="w-5min-w-56 [&>li]:border-contrast flex min-w-56 flex-col items-start justify-start gap-0 [&>li]:w-full [&>li]:cursor-pointer [&>li]:border-b-2 [&>li]:px-4 [&>li]:py-8 [&>li]:text-lg [&>li]:text-white"
-      >
-         <li class="bg-contrast/30">Talleres y áreas de trabajo</li>
-         <li>Áreas de cocina</li>
-         <li>Tanques de combustible</li>
-         <li>Area de cocina</li>
-      </ul>
-      <div class="relative flex flex-auto flex-col overflow-hidden">
-         <img
-            src={Picture02.src}
-            alt=""
-            class="h-full rounded-2xl object-cover"
-         />
-         <p
-            class="absolute bottom-0 left-0 rounded-2xl bg-linear-to-b from-transparent to-black/80 px-12 pt-40 pb-4 text-2xl font-bold text-white"
-         >
-            Limpieza de grasas y aceites adheridos a las máquinas y herramientas
-            de trabajo, elimina la suciedad por contacto de los operadores
-         </p>
-      </div>
+      Áreas
+   </h2>
+   <div class="flex flex-col lg:h-screen lg:flex-row">
+      {
+         areas.map((area: { title: string; picture: string; icon: string }) => (
+            <article class="relative flex h-[80dvh] w-full items-center justify-center overflow-hidden lg:h-screen lg:w-1/3 lg:max-w-1/3 [&>div]:bg-black/0 hover:[&>div]:bg-black/0 lg:[&>div]:bg-black/30 [&>div>div]:opacity-100 hover:[&>div>div]:opacity-100 lg:[&>div>div]:opacity-80 [&>img]:scale-100 hover:[&>img]:scale-105">
+               <img
+                  src={area.picture}
+                  alt={area.title}
+                  class="size-full object-cover transition-all duration-200 ease-linear"
+               />
+               <div class="absolute top-0 left-0 z-10 flex size-full flex-col items-center justify-end px-4 py-8 transition-all duration-200 ease-linear sm:py-12">
+                  <div class="bg-main flex items-center justify-start gap-5 rounded-4xl py-3 pr-6 pl-3">
+                     <div class="rounded-full bg-white p-2">
+                        <img
+                           src={area.icon}
+                           alt="area-icon"
+                           class="svg-to-main size-5"
+                        />
+                     </div>
+                     <span class="font-bold text-white">{area.title}</span>
+                  </div>
+               </div>
+            </article>
+         ))
+      }
    </div>
 </section>
